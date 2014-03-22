@@ -6,6 +6,8 @@ public class Shotgun : MonoBehaviour
 	public bool debug = false;
 	public AudioClip firingSound;		// sound to play when shooting
 	public float rateOfFire = 2f;		// how many times to fire in one second
+	public float bulletSpread = 8f; 	// size of spread cone (degrees)
+	public float gunNozzleSize = 0.15f; // size of nozzle
 	public Transform projectile;		// the projectile to shoot!
 	public float projectileSpeed;		// how fast the projectile will travel initially
 	private Transform player;			// refer to the player for stuff
@@ -52,7 +54,6 @@ public class Shotgun : MonoBehaviour
 		float distance = Mathf.Tan(angleSpread);
 		
 		Vector3 nozzle = player.position + player.forward;
-		nozzle += Random.onUnitSphere * 0.1f;
 		
 		for (int i = 0; i < 8; i++)
 		{
@@ -60,7 +61,8 @@ public class Shotgun : MonoBehaviour
 			Vector3 bulletDirection = new Vector3(pointInCircle.x, pointInCircle.y, distance).normalized;
 			bulletDirection = player.rotation * bulletDirection;
 			Quaternion bulletRotation = Quaternion.LookRotation(bulletDirection);
-			Transform b = Instantiate(projectile, nozzle, bulletRotation) as Transform;
+			Vector3 bulletSpawn = nozzle + (Random.insideUnitSphere * gunNozzleSize);
+			Transform b = Instantiate(projectile, bulletSpawn, bulletRotation) as Transform;
 			b.rigidbody.AddForce(bulletDirection * projectileSpeed, ForceMode.VelocityChange);
 			b.BroadcastMessage("SetDamageSource", Projectile.Source.Player);
 		}
