@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class CharacterController : MonoBehaviour {
+	public bool canJump = true;
+	public float jumpStrength = 30;
 
 	public float moveSpeed = 10f;			// movespeed of the player
 
@@ -29,8 +31,19 @@ public class CharacterController : MonoBehaviour {
 		
 		// Create a vector and populate it with the movement input
 		Vector3 force = (transform.forward * v) + (transform.right * h);
+
 		force.Normalize();
+
+		if (Input.GetButtonDown ("Jump") & canJump)
+		{
+			force += Vector3.up * jumpStrength;
+		}
 		
 		rigidbody.AddForce(force * moveSpeed * Time.deltaTime, ForceMode.VelocityChange);
+
+		if (Physics.Raycast (transform.position, (Vector3.up*-1), 1.2f))
+			canJump = true;
+		else
+			canJump = false;
 	}
 }
