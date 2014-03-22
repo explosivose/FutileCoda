@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BasicBullet : MonoBehaviour {
 	
-	public Projectile.Source source
+	public Projectile.Source ProjectileSource
 	{
 		get
 		{
@@ -15,6 +15,7 @@ public class BasicBullet : MonoBehaviour {
 		}
 	}
 	
+	private Projectile.Source source;
 	
 	
 	// Use this for initialization
