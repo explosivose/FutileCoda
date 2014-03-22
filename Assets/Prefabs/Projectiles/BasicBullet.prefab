@@ -96,25 +96,25 @@ TrailRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Time: .200000003
-  m_StartWidth: .100000001
+  m_Time: .100000001
+  m_StartWidth: .0500000007
   m_EndWidth: 0
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4278255601
     m_Color[1]:
       serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4278255344
     m_Color[2]:
       serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4278255087
     m_Color[3]:
       serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4278254830
     m_Color[4]:
       serializedVersion: 2
-      rgba: 16777215
+      rgba: 64493
   m_MinVertexDistance: .100000001
   m_Autodestruct: 0
 --- !u!114 &11400000
