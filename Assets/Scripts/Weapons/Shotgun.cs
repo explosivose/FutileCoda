@@ -67,6 +67,8 @@ public class Shotgun : MonoBehaviour
 			b.BroadcastMessage("SetDamageSource", Projectile.Source.Player);
 		}
 		
+		ScreenShake.Instance.Shake(0.5f, 2f);
+		
 		yield return new WaitForSeconds(1/rateOfFire);
 		
 		firing = false;
