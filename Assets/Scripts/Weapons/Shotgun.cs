@@ -52,6 +52,7 @@ public class Shotgun : MonoBehaviour
 		float distance = Mathf.Tan(angleSpread);
 		
 		Vector3 nozzle = player.position + player.forward;
+		nozzle += Random.onUnitSphere * 0.1f;
 		
 		for (int i = 0; i < 8; i++)
 		{

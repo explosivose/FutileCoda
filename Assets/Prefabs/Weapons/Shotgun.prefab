@@ -38,11 +38,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6673707c0ca43d645adcac3dbfe5dd42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 0
+  debug: 1
   firingSound: {fileID: 8300000, guid: 285cc31886d56f64c955bbac18cf9cbe, type: 3}
-  rateOfFire: 2
+  rateOfFire: 10
   projectile: {fileID: 400000, guid: c5e7a2c12668f894fb61a40d36b902d6, type: 2}
-  projectileSpeed: 100
+  projectileSpeed: 500
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
