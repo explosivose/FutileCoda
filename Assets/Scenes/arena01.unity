@@ -412,6 +412,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97fd580f5a47a1649952ae097eafe789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canJump: 1
+  jumpStrength: 20
   moveSpeed: 30
   sensitivityX: 2
 --- !u!23 &1089409365
@@ -575,6 +577,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 13600000, guid: cbd3ee253fb155f4fb254c774819a613, type: 2}
       propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: cbd3ee253fb155f4fb254c774819a613, type: 2}
+      propertyPath: jumpStrength
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400000, guid: cbd3ee253fb155f4fb254c774819a613, type: 2}
+      propertyPath: m_Mass
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
