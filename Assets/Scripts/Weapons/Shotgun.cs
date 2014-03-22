@@ -59,7 +59,7 @@ public class Shotgun : MonoBehaviour
 		{
 			Vector2 pointInCircle = Random.insideUnitCircle;
 			Vector3 bulletDirection = new Vector3(pointInCircle.x, pointInCircle.y, distance).normalized;
-			bulletDirection = player.rotation * bulletDirection;
+			bulletDirection = Camera.main.transform.rotation * bulletDirection;
 			Quaternion bulletRotation = Quaternion.LookRotation(bulletDirection);
 			Vector3 bulletSpawn = nozzle + (Random.insideUnitSphere * gunNozzleSize);
 			Transform b = Instantiate(projectile, bulletSpawn, bulletRotation) as Transform;
