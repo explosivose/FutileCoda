@@ -67,7 +67,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: .200000003
   m_Drag: .0500000007
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -102,19 +102,19 @@ TrailRenderer:
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
-      rgba: 4292006610
+      rgba: 4290183166
     m_Color[1]:
       serializedVersion: 2
-      rgba: 4291940817
+      rgba: 4290117373
     m_Color[2]:
       serializedVersion: 2
-      rgba: 4290624957
+      rgba: 4290051580
     m_Color[3]:
       serializedVersion: 2
-      rgba: 4288914339
+      rgba: 4289985787
     m_Color[4]:
       serializedVersion: 2
-      rgba: 10658466
+      rgba: 11729914
   m_MinVertexDistance: .100000001
   m_Autodestruct: 0
 --- !u!114 &11400000
