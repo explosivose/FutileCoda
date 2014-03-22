@@ -39,10 +39,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 1
-  firingSound: {fileID: 8300000, guid: 285cc31886d56f64c955bbac18cf9cbe, type: 3}
-  rateOfFire: 5
+  firingSound: {fileID: 8300000, guid: da58747e93697734c89c25e38ec5c035, type: 3}
+  rateOfFire: .910000026
+  bulletSpread: 8
+  gunNozzleSize: .150000006
   projectile: {fileID: 400000, guid: c5e7a2c12668f894fb61a40d36b902d6, type: 2}
-  projectileSpeed: 25
+  projectileSpeed: 50
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
