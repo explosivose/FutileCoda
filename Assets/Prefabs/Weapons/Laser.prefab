@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 1
-  startSound: {fileID: 8300000, guid: c3703f6a249d6ce418af5279b788a136, type: 3}
+  startSound: {fileID: 8300000, guid: 9e5f766f7a2bb8646bb2b4327facfe70, type: 3}
   maxCharge: 4
   chargeTime: 5
   dischargeRate: 50
