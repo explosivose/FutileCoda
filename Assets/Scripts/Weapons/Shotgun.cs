@@ -70,7 +70,11 @@ public class Shotgun : MonoBehaviour
 			Vector3 bulletSpawn = nozzle + (Random.insideUnitSphere * gunNozzleSize);
 			Transform b = Instantiate(projectile, bulletSpawn, bulletRotation) as Transform;
 			b.rigidbody.AddForce(bulletDirection * projectileSpeed, ForceMode.VelocityChange);
-			b.BroadcastMessage("SetDamageSource", Projectile.Source.Player);
+			
+			if (gunman.tag == "Player")
+				b.BroadcastMessage("SetDamageSource", Projectile.Source.Player);
+			else
+				b.BroadcastMessage("SetDamageSource", Projectile.Source.Enemy);
 		}
 		
 		if (gunman.tag =="Player")
