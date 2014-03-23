@@ -7,10 +7,12 @@ public class Dog : MonoBehaviour
 {
 	public float moveSpeed;
 	public int hitPoints = 10;
+	public float attackRate = 1f;
 	public AudioClip deathSound;
 	
 	private bool isDead = false;
 	private bool isHurt = false;
+	private bool isAttacking = false;
 	private Transform player;
 	private Animator anim;
 
@@ -46,7 +48,7 @@ public class Dog : MonoBehaviour
 		}
 		if (col.gameObject.tag == "Player")
 		{
-			anim.Play("dog_attack");
+			if (!isAttacking) StartCoroutine(Attack(col.transform));
 		}
 	}
 	
@@ -56,6 +58,7 @@ public class Dog : MonoBehaviour
 		if (col.gameObject.tag == "Player")
 		{
 			anim.Play ("dog_walkcycle");
+			isAttacking = false;
 		}
 			
 	}
@@ -64,6 +67,17 @@ public class Dog : MonoBehaviour
 	{
 		hitPoints--;
 		if (!isHurt) StartCoroutine(HurtEffect());
+	}
+	
+	IEnumerator Attack(Transform player)
+	{
+		isAttacking = true;
+		anim.Play("dog_attack");
+		while(isAttacking)
+		{
+			player.BroadcastMessage("Hurt");
+			yield return new WaitForSeconds(1/attackRate);
+		}
 	}
 	
 	IEnumerator HurtEffect()

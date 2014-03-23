@@ -73,6 +73,13 @@ public class GameManager : Singleton<GameManager>
 		Time.timeScale = 1f;
 	}
 	
+	public void GameOver(int score)
+	{
+		Screen.lockCursor = false;
+		state = State.GameOver;
+		gui = GUIState.DeathScreen;
+	}
+	
 	void Awake()
 	{
 		menuSkin = (GUISkin)Resources.Load("Menus", typeof(GUISkin));
@@ -80,7 +87,7 @@ public class GameManager : Singleton<GameManager>
 	
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Escape) && state != State.Paused) Pause();
+		if (Input.GetKeyDown(KeyCode.Escape) && state == State.Playing ) Pause();
 		else if (Input.GetKeyDown(KeyCode.Escape) && state == State.Paused) UnPause();
 	}
 	
@@ -116,7 +123,7 @@ public class GameManager : Singleton<GameManager>
 		
 		GUILayout.BeginHorizontal();
 		if (GUILayout.Button("Restart", menuSkin.button))
-			UnPause();
+			Application.LoadLevel(Application.loadedLevel);
 		
 		if (GUILayout.Button ("Credits", menuSkin.button))
 			gui = GUIState.Credits;
@@ -166,7 +173,7 @@ public class GameManager : Singleton<GameManager>
 	{
 		GUILayout.Space (100);
 		
-		GUILayout.Label ("FUTILE CODE", menuSkin.label);
+		GUILayout.Label ("FUTILE CODA", menuSkin.label);
 		GUILayout.Label("This game was made by team SuperCore", menuSkin.label);
 		GUILayout.Label ("at the weekend long SuperCore Game Jam #2", menuSkin.label);
 		GUILayout.Label ("March 22nd/23rd 2014", menuSkin.label);
@@ -174,7 +181,7 @@ public class GameManager : Singleton<GameManager>
 		GUILayout.Space (15);
 		
 		if (GUILayout.Button("Main Menu",menuSkin.button))
-			gui = GUIState.PauseMenu;
+			gui = GUIState.DeathScreen;
 	}
 
 	

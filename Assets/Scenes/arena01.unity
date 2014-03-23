@@ -498,7 +498,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 3
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .892733574, g: .948529422, b: .909279943, a: 1}
   m_Intensity: .5
   m_Range: 10
   m_SpotAngle: 30
@@ -530,7 +530,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 623711850}
-  m_LocalRotation: {x: .408217937, y: -.234569728, z: .109381661, w: .875426114}
+  m_LocalRotation: {x: -.602176487, y: .283217192, z: -.241463199, w: -.706305206}
   m_LocalPosition: {x: 10.8890495, y: -3.82991171, z: -7.9892211}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1241,6 +1241,52 @@ Transform:
   - {fileID: 1908972135}
   - {fileID: 1246534854}
   - {fileID: 1721847743}
+  m_Father: {fileID: 0}
+--- !u!1 &1301853846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1301853848}
+  - 131: {fileID: 1301853847}
+  m_Layer: 0
+  m_Name: UnityWatermark-small
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!131 &1301853847
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1301853846}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: debf398799f1f1f479ca2089c0ffcbd5, type: 3}
+  m_Color: {r: .5, g: .5, b: .5, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: -217.899994
+    y: -348.200012
+    width: 400
+    height: 400
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!4 &1301853848
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1301853846}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .5, y: .5, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 1}
+  m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &1349375807
 GameObject:
@@ -2105,6 +2151,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ec9f4ce7c115a2d469dc05658fcfbd96, type: 2}
       propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: ec9f4ce7c115a2d469dc05658fcfbd96, type: 2}
+      propertyPath: spawnTime
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
