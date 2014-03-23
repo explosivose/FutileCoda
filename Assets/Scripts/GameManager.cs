@@ -86,24 +86,24 @@ public class GameManager : Singleton<GameManager>
 	public GUIWindow weaponSelect = new GUIWindow();
 	void wWeaponSelect(int windowID)
 	{
-		GUILayout.Space (15);
+		GUILayout.Space (100);
 		
 		GUILayout.BeginHorizontal();
-		GUILayout.Label("Primary Weapon: " + weaponList[wep1].name);
-		GUILayout.Label("Secondary Weapon: " + weaponList[wep2].name);
+		GUILayout.Label("Primary: " + weaponList[wep1].name, menuSkin.label);
+		GUILayout.Label("Secondary: " + weaponList[wep2].name, menuSkin.label);
 		GUILayout.EndHorizontal();
 		
 		for (int i = 0; i < weaponList.Length; i++)
 		{
 			GUILayout.BeginHorizontal();
-			if (GUILayout.Button(weaponList[i].name))
+			if (GUILayout.Button(weaponList[i].name, menuSkin.button))
 				wep1 = i;
-			if (GUILayout.Button(weaponList[i].name))
+			if (GUILayout.Button(weaponList[i].name, menuSkin.button))
 				wep2 = i;
 			GUILayout.EndHorizontal();
 		}
 		
-		if (GUILayout.Button("Start Game"))
+		if (GUILayout.Button("Start Game", menuSkin.button))
 			StartGame();
 		
 	}
@@ -111,7 +111,7 @@ public class GameManager : Singleton<GameManager>
 	public GUIWindow deathScreen = new GUIWindow();
 	void wDeathMenu(int windowID)
 	{
-		GUILayout.Space (15);
+		GUILayout.Space (100);
 		
 		GUILayout.BeginHorizontal();
 		if (GUILayout.Button("Restart", menuSkin.button))
@@ -128,7 +128,7 @@ public class GameManager : Singleton<GameManager>
 	public GUIWindow pauseMenu = new GUIWindow();
 	void wPauseMenu(int windowID)
 	{
-		GUILayout.Space (15);
+		GUILayout.Space (100);
 		
 		GUILayout.BeginHorizontal();
 		if (GUILayout.Button("Resume", menuSkin.button))
@@ -145,7 +145,7 @@ public class GameManager : Singleton<GameManager>
 	public GUIWindow scoreBoard = new GUIWindow();
 	void wScoreBoard(int windowID)
 	{
-		GUILayout.Space (15);
+		GUILayout.Space (100);
 		
 		if (GUILayout.Button("Main Menu",menuSkin.button))
 			gui = GUIState.PauseMenu;
@@ -154,7 +154,7 @@ public class GameManager : Singleton<GameManager>
 	public GUIWindow options = new GUIWindow();
 	void wOptions(int windowID)
 	{
-		GUILayout.Space (15);
+		GUILayout.Space (100);
 		
 		if (GUILayout.Button("Main Menu",menuSkin.button))
 			gui = GUIState.PauseMenu;
@@ -163,12 +163,12 @@ public class GameManager : Singleton<GameManager>
 	public GUIWindow credits = new GUIWindow();
 	void wCredits(int windowID)
 	{
-		GUILayout.Space (15);
+		GUILayout.Space (100);
 		
-		GUILayout.Label ("FUTILE CODE");
-		GUILayout.Label("This game was made by team SuperCore");
-		GUILayout.Label ("at the weekend long SuperCore Game Jam #2");
-		GUILayout.Label ("March 22nd/23rd 2014");
+		GUILayout.Label ("FUTILE CODE", menuSkin.label);
+		GUILayout.Label("This game was made by team SuperCore", menuSkin.label);
+		GUILayout.Label ("at the weekend long SuperCore Game Jam #2", menuSkin.label);
+		GUILayout.Label ("March 22nd/23rd 2014", menuSkin.label);
 		
 		GUILayout.Space (15);
 		
@@ -237,26 +237,6 @@ public class GameManager : Singleton<GameManager>
 			break;
 		}
 		
-		
-		/*
-		if (state == State.PreGame)
-		{
-			for (int i = 0; i < weaponList.Length; i++)
-			{
-				if (GUI.Button(new Rect(Screen.width/4, 100f + (30f*i), 300f, 30f), weaponList[i].name))
-					wep1 = i;
-				
-				if (GUI.Button(new Rect(Screen.width/2, 100f + (30f*i), 300f, 30f), weaponList[i].name))
-					wep2 = i;
-			}
-			GUI.Button(new Rect(Screen.width/4, 100f + weaponList.Length*30f, 300f, 30f), "Primary: " + weaponList[primary].name);
-			GUI.Button(new Rect(Screen.width/2, 100f + weaponList.Length*30f, 300f, 30f), "Secondary: " +  weaponList[secondary].name);
-			
-			if ( GUI.Button(new Rect(Screen.width/4, 100f + (weaponList.Length+1)*30f, 300f, 30f), "Start Game") )
-			{
-				StartGame();
-			}
-		}*/
 	}
 }
 

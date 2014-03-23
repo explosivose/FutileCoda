@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
 		{
 			weaponInventory[selected].BroadcastMessage("Fire");
 		}
-		if (Input.GetKey(KeyCode.Q))
+		if (Input.GetKeyUp(KeyCode.Q))
 		{
 			if (selected == 0) selected = 1;
 			else selected = 0;
