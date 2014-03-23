@@ -40,6 +40,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 400000, guid: 977ae9872f59c334c90e950fee1ccc1e, type: 2}
+  - {fileID: 400000, guid: a49d8d9058e1d1a4eaaf70c554871b40, type: 2}
   spawnTime: 1
 --- !u!1001 &100100000
 Prefab:
