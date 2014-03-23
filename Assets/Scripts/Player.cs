@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
 	private bool isDead = false;
 	private bool hurting = false;
 	private int killCount = 0;
+	private GUIText healthText;
 	
 	public void SetWeaponSelection(Transform primary, Transform secondary)
 	{
@@ -31,6 +32,7 @@ public class Player : MonoBehaviour
 	void Start () 
 	{
 		health = maxHealth;
+		healthText = GameObject.Find("HUD Text").transform.FindChild("health_value").guiText;
 	}
 	
 	void Hurt()
@@ -81,7 +83,7 @@ public class Player : MonoBehaviour
 			if (selected == 0) selected = 1;
 			else selected = 0;
 		}
-		
+		healthText.text = (health * 10).ToString();
 	}
 	
 	IEnumerator Die()
@@ -91,7 +93,7 @@ public class Player : MonoBehaviour
 		GetComponent<CharacterController>().enabled = false;
 		Camera.main.GetComponent<CharacterLook>().enabled = false;
 		ScreenFade.Instance.StartFade(Color.red, 0.5f);
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(0.5f);
 		GameManager.Instance.GameOver(killCount);
 		ScreenFade.Instance.StartFade(Color.clear, 0.5f);
 		
