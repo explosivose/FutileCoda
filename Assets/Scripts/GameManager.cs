@@ -12,7 +12,7 @@ public class GameManager : Singleton<GameManager>
 	{
 		get 
 		{
-			return (state == State.Paused);
+			return (state != State.Playing);
 		}
 	}
 	
