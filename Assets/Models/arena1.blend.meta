@@ -19,6 +19,8 @@ ModelImporter:
     100026: wall_top_right
     100028: Cylinder_000
     100030: top_wall_001
+    100032: long_wall_new
+    100034: short_wall_new
     400000: //RootNode
     400002: Cylinder
     400004: Cylinder_001
@@ -35,6 +37,8 @@ ModelImporter:
     400026: wall_top_right
     400028: Cylinder_000
     400030: top_wall_001
+    400032: long_wall_new
+    400034: short_wall_new
     2300000: //RootNode
     2300002: Cylinder
     2300004: Cylinder_001
@@ -51,6 +55,8 @@ ModelImporter:
     2300026: wall_top_right
     2300028: Cylinder_000
     2300030: top_wall_001
+    2300032: long_wall_new
+    2300034: short_wall_new
     3300000: //RootNode
     3300002: Cylinder
     3300004: Cylinder_001
@@ -67,6 +73,8 @@ ModelImporter:
     3300026: wall_top_right
     3300028: Cylinder_000
     3300030: top_wall_001
+    3300032: long_wall_new
+    3300034: short_wall_new
     4300000: Cube
     4300002: wall_bot_right
     4300004: wall_top_left
@@ -83,6 +91,8 @@ ModelImporter:
     4300026: top_pillar
     4300028: Cylinder_000
     4300030: top_wall_001
+    4300032: long_wall_new
+    4300034: short_wall_new
     6400000: Cylinder
     6400002: Cylinder_001
     6400004: floor
@@ -98,6 +108,8 @@ ModelImporter:
     6400024: wall_top_right
     6400026: Cylinder_000
     6400028: top_wall_001
+    6400030: long_wall_new
+    6400032: short_wall_new
     7400000: Default Take
     9500000: //RootNode
   materials:
