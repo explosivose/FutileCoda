@@ -37,7 +37,7 @@ public class Shotgun : MonoBehaviour
 		}
 	}
 	
-	public void Fire()
+	void Fire()
 	{
 		if (!firing) StartCoroutine(SingleShot());
 	}

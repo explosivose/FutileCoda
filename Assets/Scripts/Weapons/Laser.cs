@@ -19,6 +19,7 @@ public class Laser : MonoBehaviour
 	private LineRenderer lr;
 	private Vector3 laserStart;
 	private Vector3 laserEnd;
+	private float FOV;
 	
 	// Use this for initialization
 	void Start () 
@@ -26,6 +27,7 @@ public class Laser : MonoBehaviour
 		lr = GetComponent<LineRenderer>();
 		lr.SetWidth(maxCharge, maxCharge);
 		charge = maxCharge;
+		FOV = Camera.main.fieldOfView;
 	}
 	
 	// Update is called once per frame
@@ -35,14 +37,18 @@ public class Laser : MonoBehaviour
 		laserEnd =Camera.main.transform.forward * 100;
 		lr.SetPosition(0, laserStart);
 		lr.SetPosition(1, laserEnd);
-		 
+		
+		float laserPower = charge/maxCharge;
+		
 		if (debug && Input.GetButton("Fire1")) Fire ();
 		if (firing)
 		{
-			audio.pitch = 0.5f + (charge / maxCharge);
+			audio.pitch = 0.5f + laserPower;
+			Camera.main.fieldOfView = FOV + 20f*laserPower;
 		}
 		else
 		{
+			Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, FOV,Time.deltaTime);
 			lr.SetWidth(0f, 0f);
 			if (charge < maxCharge)
 				charge += maxCharge * Time.deltaTime * 1/chargeTime;
@@ -52,8 +58,10 @@ public class Laser : MonoBehaviour
 	public void Fire()
 	{
 		if (lastFireTime + 0.1f < Time.time) 
+		{
 			AudioSource.PlayClipAtPoint(startSound, laserStart);
-		
+			ScreenShake.Instance.Shake(0.3f * charge/maxCharge, 1f);
+		}
 		lastFireTime = Time.time;
 		
 		if (!firing && charge > 0f) StartCoroutine(FireLaser());
@@ -67,7 +75,7 @@ public class Laser : MonoBehaviour
 		{
 			lr.SetWidth(charge, charge * 2f);
 			charge -= 0.1f;
-			if (!damage) StartCoroutine(Damage ());
+			if (!damage && charge > 0.25f) StartCoroutine(Damage ());
 			yield return new WaitForSeconds(1/dischargeRate);
 		}
 		firing = false;
