@@ -38,7 +38,6 @@ public class Dog : MonoBehaviour
 			if ( col.relativeVelocity.magnitude > 10f )
 			{
 				StartCoroutine(Hurt());
-				if (hitPoints < 0) StartCoroutine(Die());
 			}
 		}
 		if (col.gameObject.tag == "Player")
@@ -63,8 +62,9 @@ public class Dog : MonoBehaviour
 		{
 			hitPoints--;
 			anim.Play("dog_hit");
-			yield return new WaitForSeconds(0.4f);
+			yield return new WaitForSeconds(0.334f);
 			anim.Play ("dog_walkcycle");
+			if (hitPoints < 0) StartCoroutine(Die ());
 		}
 		yield return new WaitForFixedUpdate();
 	}

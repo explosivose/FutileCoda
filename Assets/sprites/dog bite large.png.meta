@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e658bdc628b638e47a1e4164a4e623d6
+guid: 9c7758b44df2eb84ca95065e66cc5157
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -41,22 +41,31 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: dog hit large_0
+    - name: dog bite large_0
       rect:
         serializedVersion: 2
-        x: 112
-        y: 104
-        width: 474
-        height: 1036
+        x: 110
+        y: 99
+        width: 453
+        height: 993
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: dog hit large_1
+    - name: dog bite large_1
       rect:
         serializedVersion: 2
-        x: 709
-        y: 98
-        width: 594
-        height: 943
+        x: 754
+        y: 93
+        width: 462
+        height: 975
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: dog bite large_2
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 93
+        width: 459
+        height: 1006
       alignment: 0
       pivot: {x: 0, y: 0}
   spritePackingTag: 

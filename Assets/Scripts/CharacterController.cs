@@ -34,7 +34,7 @@ public class CharacterController : MonoBehaviour {
 
 		force.Normalize();
 
-		if (Input.GetButtonDown ("Jump") & canJump)
+		if (Input.GetButtonDown ("Jump") && canJump)
 		{
 			force += Vector3.up * jumpStrength;
 		}

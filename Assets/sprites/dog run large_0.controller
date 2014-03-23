@@ -7,19 +7,7 @@ AnimatorController:
   m_PrefabInternal: {fileID: 0}
   m_Name: dog run large_0
   serializedVersion: 2
-  m_AnimatorParameters:
-  - m_Name: New Float
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: New Int
-    m_Type: 3
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+  m_AnimatorParameters: []
   m_AnimatorLayers:
   - serializedVersion: 3
     m_Name: Base Layer
@@ -43,41 +31,11 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: 09b812667dada3741b4f5664fab5cf28, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 36, y: 48, z: 0}
+  m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
---- !u!1102 &110240065
-State:
-  m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: dog_attack
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Motions:
-  - {fileID: 7400000, guid: 82f02e03e06931942b32c5f130b5974b, type: 2}
-  m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: -204, y: 48, z: 0}
-  m_IKOnFeet: 0
-  m_Mirror: 0
-  m_Tag: 
---- !u!1102 &110275957
-State:
-  m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: dog_death
-  m_Speed: .5
-  m_CycleOffset: 0
-  m_Motions:
-  - {fileID: 7400000, guid: 2e407b4d44dd455499c59da9f14c2c9c, type: 2}
-  m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 300, y: 48, z: 0}
-  m_IKOnFeet: 0
-  m_Mirror: 0
-  m_Tag: 
---- !u!1102 &110281326
+--- !u!1102 &110209569
 State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
@@ -88,7 +46,37 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: 301376e5ed6a9f94fa4712e2208083ba, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 36, y: 120, z: 0}
+  m_Position: {x: 384, y: -36, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110220621
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: dog_death
+  m_Speed: .5
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 2e407b4d44dd455499c59da9f14c2c9c, type: 2}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: 396, y: 96, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110240764
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: dog_attack
+  m_Speed: .800000012
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 82f02e03e06931942b32c5f130b5974b, type: 2}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: 432, y: 36, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -102,24 +90,12 @@ StateMachine:
   m_DefaultState: {fileID: 110200000}
   m_States:
   - {fileID: 110200000}
-  - {fileID: 110240065}
-  - {fileID: 110275957}
-  - {fileID: 110281326}
+  - {fileID: 110240764}
+  - {fileID: 110220621}
+  - {fileID: 110209569}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
-  m_OrderedTransitions:
-    data:
-      first: {fileID: 110281326}
-      second: []
-    data:
-      first: {fileID: 110275957}
-      second: []
-    data:
-      first: {fileID: 110240065}
-      second: []
-    data:
-      first: {fileID: 110200000}
-      second: []
+  m_OrderedTransitions: {}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
