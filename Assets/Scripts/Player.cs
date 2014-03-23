@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
 			{
 				if ( col.relativeVelocity.magnitude > 10f )
 				{
-					Hurt (5);
+					Hurt (2);
 				}
 			}
 		}
