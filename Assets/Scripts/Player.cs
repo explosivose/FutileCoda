@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Player : MonoBehaviour 
 {
-	public int maxHealth = 10;
+	public int maxHealth = 100;
 	
 	public bool Dead
 	{
@@ -44,10 +44,21 @@ public class Player : MonoBehaviour
 		scoreText = GameObject.Find ("HUD Text").transform.FindChild("score_value").guiText;
 	}
 	
+	void OnCollisionEnter(Collision col)
+	{
+		if (col.gameObject.tag == "Bullet")
+		{
+			if ( col.relativeVelocity.magnitude > 10f )
+			{
+				Hurt (5);
+			}
+		}
+	}
+	
 	void Hurt()
 	{
 		if (isDead) return;
-		health--;
+		health-=10;
 		StartCoroutine(HurtEffect());
 		if ( health < 0 ) StartCoroutine(Die() );
 	}
@@ -91,12 +102,22 @@ public class Player : MonoBehaviour
 		}
 		if (Input.GetKeyUp(KeyCode.Q))
 		{
-			if (selected == 0) selected = 1;
-			else selected = 0;
+			if (selected == 0) 
+			{
+				selected = 1;
+				GunTexture.Instance.ChangeTexture(weaponInventory[selected]);
+			}	
+			else 
+			{
+				selected = 0;
+				GunTexture.Instance.ChangeTexture(weaponInventory[selected]);
+			}
 		}
-		healthText.text = (health * 10).ToString();
+		healthText.text = health.ToString();
 		scoreText.text = killCount.ToString();
 	}
+	
+	
 	
 	IEnumerator Die()
 	{
