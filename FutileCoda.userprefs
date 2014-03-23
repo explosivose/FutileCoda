@@ -1,8 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Weapons\Shotgun.cs">
     <Files>
       <File FileName="Assets\Scripts\Weapons\Shotgun.cs" Line="39" Column="17" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\Dog.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Enemies\Dog.cs" Line="13" Column="24" />
+>>>>>>> f6b1a2425735858e652d83498fb967f780e22330
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

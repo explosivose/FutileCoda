@@ -57,7 +57,7 @@ GameObject:
   - 4: {fileID: 400006}
   - 132: {fileID: 13200004}
   m_Layer: 0
-  m_Name: ammo_label
+  m_Name: score_label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ GameObject:
   - 4: {fileID: 400008}
   - 132: {fileID: 13200006}
   m_Layer: 0
-  m_Name: ammo_value
+  m_Name: score_value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
 	private bool hurting = false;
 	private int killCount = 0;
 	private GUIText healthText;
+	private GUIText scoreText;
 	
 	public void SetWeaponSelection(Transform primary, Transform secondary)
 	{
@@ -28,11 +29,18 @@ public class Player : MonoBehaviour
 		weaponInventory[1].parent = transform;
 	}
 	
+	public void AddKill()
+	{
+		killCount++;
+	}
+		
+	
 	// Use this for initialization
 	void Start () 
 	{
 		health = maxHealth;
 		healthText = GameObject.Find("HUD Text").transform.FindChild("health_value").guiText;
+		scoreText = GameObject.Find ("HUD Text").transform.FindChild("score_value").guiText;
 	}
 	
 	void Hurt()
@@ -84,6 +92,7 @@ public class Player : MonoBehaviour
 			else selected = 0;
 		}
 		healthText.text = (health * 10).ToString();
+		scoreText.text = killCount.ToString();
 	}
 	
 	IEnumerator Die()
