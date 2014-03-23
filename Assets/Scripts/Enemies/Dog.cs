@@ -23,11 +23,12 @@ public class Dog : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
-		if (isDead) return;
+		
 		Vector3 target = player.position;
 		target.y = transform.position.y;
 		Vector3 direction = target - transform.position;
 		transform.rotation = Quaternion.LookRotation(direction);
+		if (isDead) return;
 		rigidbody.AddForce(transform.forward * moveSpeed * Time.deltaTime, ForceMode.VelocityChange);
 	}
 	
@@ -38,7 +39,8 @@ public class Dog : MonoBehaviour
 		{
 			if ( col.relativeVelocity.magnitude > 10f )
 			{
-				if (!isHurt) StartCoroutine(Hurt());
+				hitPoints--;
+				if (!isHurt) StartCoroutine(HurtEffect());
 			}
 		}
 		if (col.gameObject.tag == "Player")
@@ -57,12 +59,12 @@ public class Dog : MonoBehaviour
 			
 	}
 	
-	IEnumerator Hurt()
+	IEnumerator HurtEffect()
 	{
 		isHurt = true;
 		if (!isDead)
 		{
-			hitPoints--;
+			
 			if (hitPoints < 0) 
 			{
 				StartCoroutine(Die ());
