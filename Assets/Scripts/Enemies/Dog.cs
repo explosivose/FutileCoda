@@ -7,6 +7,7 @@ public class Dog : MonoBehaviour
 {
 	public float moveSpeed;
 	public int hitPoints = 10;
+	public AudioClip deathSound;
 	
 	private bool isDead = false;
 	private bool isHurt = false;
@@ -59,12 +60,17 @@ public class Dog : MonoBehaviour
 			
 	}
 	
+	public void LaserDamage()
+	{
+		hitPoints--;
+		if (!isHurt) StartCoroutine(HurtEffect());
+	}
+	
 	IEnumerator HurtEffect()
 	{
 		isHurt = true;
 		if (!isDead)
 		{
-			
 			if (hitPoints < 0) 
 			{
 				StartCoroutine(Die ());
@@ -84,6 +90,7 @@ public class Dog : MonoBehaviour
 	IEnumerator Die()
 	{
 		isDead = true;
+		AudioSource.PlayClipAtPoint(deathSound, transform.position);
 		anim.Play("dog_death");
 		yield return new WaitForSeconds(1f);
 		Destroy(this.gameObject);
