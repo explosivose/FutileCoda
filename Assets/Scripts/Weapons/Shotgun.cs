@@ -23,12 +23,6 @@ public class Shotgun : MonoBehaviour
 		gunman = GameObject.FindGameObjectWithTag("Player").transform;
 	}
 	
-	// Use this for initialization
-	void Start () 
-	{
-		
-	}
-	
 	// Update is called once per frame
 	void Update () 
 	{

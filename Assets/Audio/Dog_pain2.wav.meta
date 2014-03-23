@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: fe77c4304ad39b344a57d18968a54c19
+=======
+guid: ae6efedd73576e145a12de6712596ad1
+>>>>>>> origin/guntexture
 AudioImporter:
   serializedVersion: 4
   format: -1

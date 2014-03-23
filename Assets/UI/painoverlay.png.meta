@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/UI/painoverlay.png.meta
+guid: 220b2f523603cf64586d40860e0d5963
+=======
 guid: 525cbf8e456677042b75e27dbea7beb5
+>>>>>>> f6b1a2425735858e652d83498fb967f780e22330:Assets/UI/painoverlay.png.meta
 TextureImporter:
   serializedVersion: 2
   mipmaps:
