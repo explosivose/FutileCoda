@@ -8,7 +8,13 @@ public class GameManager : Singleton<GameManager>
 	public Transform[] weaponList;
 	public Transform[] enemyList;
 	
-
+	public bool GameIsPaused
+	{
+		get 
+		{
+			return (state == State.Paused);
+		}
+	}
 	
 	private Rect windowSize = new Rect();
 	private GUISkin menuSkin;
@@ -42,22 +48,28 @@ public class GameManager : Singleton<GameManager>
 	
 	void StartGame()
 	{
-		state = State.Playing;
-		gui = GUIState.NoWindows;
-		
+		Destroy(Camera.main.gameObject);
 		Transform p = Instantiate(player, Vector3.zero, Quaternion.identity) as Transform;
 		Player playerScript = p.GetComponent<Player>();
 		playerScript.SetWeaponSelection(weaponList[wep1], weaponList[wep2]);
+		ScreenShake.Instance.SetCamera(Camera.main.transform);
+		UnPause();
 	}
 	
-	void Pause()
+	public void Pause()
 	{
-	
+		Screen.lockCursor = false;
+		state = State.Paused;
+		gui = GUIState.PauseMenu;
+		Time.timeScale = 0f;
 	}
 	
-	void UnPause()
+	public void UnPause()
 	{
-		
+		Screen.lockCursor = true;
+		state = State.Playing;
+		gui = GUIState.NoWindows;
+		Time.timeScale = 1f;
 	}
 	
 	void Awake()

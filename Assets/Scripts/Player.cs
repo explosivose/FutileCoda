@@ -29,8 +29,7 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		Screen.lockCursor = true;
-		if (Input.GetButton("Fire1"))
+		if (Input.GetButton("Fire1") && !GameManager.Instance.GameIsPaused)
 		{
 			weaponInventory[selected].BroadcastMessage("Fire");
 		}

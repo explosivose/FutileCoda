@@ -23,20 +23,24 @@ public class ScreenShake : Singleton<ScreenShake>
 		t = decay;
 	}
 	
-	void OnLevelWasLoaded()
+	public void SetCamera(Transform newCamera)
 	{
-		cam = Camera.main.transform;
-		if (cam == null) Debug.LogError("could not find main camera");
-		originalPosition = cam.localPosition;
+		cam = newCamera;
+		originalPosition = newCamera.position;
 	}
 	
 	void Update()
 	{
+		if (GameManager.Instance.GameIsPaused) return;
+		if (cam == null) return;
 		if (mag > 0f)
 		{
 			cam.localPosition = originalPosition + Random.insideUnitSphere * mag;
 			mag -= t * Time.deltaTime;
 		}
-		else cam.localScale = originalPosition;
+		else 
+		{
+			cam.localPosition = originalPosition;
+		}
 	}
 }
