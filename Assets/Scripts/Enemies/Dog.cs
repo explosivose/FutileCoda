@@ -38,7 +38,8 @@ public class Dog : MonoBehaviour
 		if (isDead || isHurt) return;
 		rigidbody.AddForce(transform.forward * moveSpeed * Time.deltaTime, ForceMode.VelocityChange);
 		int i = Random.Range(0, 1000);
-		if (i <= 25) AudioSource.PlayClipAtPoint(growlSound[i], transform.position);
+		int j = Random.Range (0, growlSound.Length);
+		if (i <= 25) AudioSource.PlayClipAtPoint(growlSound[j], transform.position);
 	}
 	
 	void OnCollisionEnter(Collision col)
