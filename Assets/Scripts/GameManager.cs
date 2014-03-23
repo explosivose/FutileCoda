@@ -20,7 +20,7 @@ public class GameManager : Singleton<GameManager>
 	private GUISkin menuSkin;
 	
 	private int wep1 = 0;
-	private int wep2 = 0;
+	private int wep2 = 1;
 	
 	
 	private enum State
