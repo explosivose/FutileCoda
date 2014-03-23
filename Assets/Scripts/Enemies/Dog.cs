@@ -10,8 +10,8 @@ public class Dog : MonoBehaviour
 	public float attackRate = 1f;
 	public AudioClip deathSound;
 	public AudioClip[] biteSound;
-	public AudioClip painSound;
-	public AudioClip growlSound;
+	public AudioClip[] painSound;
+	public AudioClip[] growlSound;
 	
 	private bool isDead = false;
 	private bool isHurt = false;
@@ -101,7 +101,8 @@ public class Dog : MonoBehaviour
 			else
 			{
 				anim.Play("dog_hit");
-				AudioSource.PlayClipAtPoint(painSound, transform.position);
+				int j = Random.Range(0, painSound.Length);
+				AudioSource.PlayClipAtPoint(painSound[j], transform.position);
 				yield return new WaitForSeconds(0.334f);
 				anim.Play ("dog_walkcycle");
 			}
