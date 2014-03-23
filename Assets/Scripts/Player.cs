@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
 	
 	public Transform[] weaponInventory = new Transform[2];
 	public int selected = 0;
+	public AudioClip[] hurtSound;
 	private int health;
 	private bool isDead = false;
 	private bool hurting = false;
@@ -74,6 +75,8 @@ public class Player : MonoBehaviour
 	{
 		if (!isDead)
 		{
+			int k = Random.Range(0, hurtSound.Length);
+			AudioSource.PlayClipAtPoint(hurtSound[k], transform.position);
 			ScreenShake.Instance.Shake(0.25f, 1f);
 			Color hurtColor = Color.red;
 			hurtColor.a = 1 - (health/maxHealth);

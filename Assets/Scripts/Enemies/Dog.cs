@@ -37,6 +37,8 @@ public class Dog : MonoBehaviour
 		transform.rotation = Quaternion.LookRotation(direction);
 		if (isDead || isHurt) return;
 		rigidbody.AddForce(transform.forward * moveSpeed * Time.deltaTime, ForceMode.VelocityChange);
+		int i = Random.Range(0, 1000);
+		if (i <= 25) AudioSource.PlayClipAtPoint(growlSound[i], transform.position);
 	}
 	
 	void OnCollisionEnter(Collision col)
