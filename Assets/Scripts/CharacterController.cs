@@ -28,7 +28,13 @@ public class CharacterController : MonoBehaviour {
 		// Take keyboard input WSAD
 		float h = Input.GetAxisRaw("Horizontal");
 		float v = Input.GetAxisRaw("Vertical");
-		
+
+		if (!canJump)
+		{
+			h = 0;
+			v = 0;
+		}
+
 		// Create a vector and populate it with the movement input
 		Vector3 force = (transform.forward * v) + (transform.right * h);
 
@@ -36,14 +42,22 @@ public class CharacterController : MonoBehaviour {
 
 		if (Input.GetButtonDown ("Jump") && canJump)
 		{
-			force += Vector3.up * jumpStrength;
+			rigidbody.velocity += Vector3.up * jumpStrength;
 		}
 		
 		rigidbody.AddForce(force * moveSpeed * Time.deltaTime, ForceMode.VelocityChange);
 
 		if (Physics.Raycast (transform.position, (Vector3.up*-1), 1.2f))
+		{
 			canJump = true;
+			rigidbody.drag = 4;
+		}
+
 		else
+		{
 			canJump = false;
+			rigidbody.drag = 0;
+			rigidbody.velocity -= Vector3.up * 0.3f;
+		}
 	}
 }

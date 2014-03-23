@@ -34,7 +34,6 @@ GameObject:
   - 23: {fileID: 2300000}
   - 114: {fileID: 11400000}
   - 54: {fileID: 5400000}
-  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -50,7 +49,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400004}
-  - 114: {fileID: 11400006}
+  - 114: {fileID: 11400004}
   - 120: {fileID: 12000000}
   - 82: {fileID: 8200000}
   m_Layer: 0
@@ -78,7 +77,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.777859449, y: 1.09756124, z: -2.51355124}
+  m_LocalPosition: {x: -.777859449, y: 9.63377571, z: -2.51355124}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -113,7 +112,7 @@ Camera:
     height: 1
   near clip plane: .300000012
   far clip plane: 1000
-  field of view: 87
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -259,7 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canJump: 1
-  jumpStrength: 20
+  jumpStrength: 10
   moveSpeed: 30
   sensitivityX: 2
 --- !u!114 &11400002
@@ -281,25 +280,14 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2937ff7f697ecd245ab042f278f17c7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11400006
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0756556c16f3b794fac1344ff0057a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 0
-  startSound: {fileID: 8300000, guid: c3703f6a249d6ce418af5279b788a136, type: 3}
+  debug: 1
+  startSound: {fileID: 8300000, guid: 6b10cba9e723da64b92c465f5c3ab221, type: 3}
   maxCharge: 4
   chargeTime: 5
   dischargeRate: 50
