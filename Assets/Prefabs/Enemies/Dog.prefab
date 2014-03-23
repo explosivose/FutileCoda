@@ -74,12 +74,17 @@ MonoBehaviour:
   moveSpeed: 16
   hitPoints: 10
   attackRate: 1
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: aa29a9187538ace4ea2c1c457f0458a0, type: 3}
   biteSound:
   - {fileID: 8300000, guid: 0f87e3186bf8a204ebb3543007826281, type: 3}
   - {fileID: 8300000, guid: b33f92623ef20d345a445c0a83a44910, type: 3}
-  painSound: {fileID: 0}
-  growlSound: {fileID: 0}
+  painSound:
+  - {fileID: 8300000, guid: dd3963a62cbb7f74692c2f5c932a091e, type: 3}
+  - {fileID: 8300000, guid: fe77c4304ad39b344a57d18968a54c19, type: 3}
+  - {fileID: 8300000, guid: fe5a881eb38a242479f58de42c2a73ee, type: 3}
+  growlSound:
+  - {fileID: 8300000, guid: f6bc1aea11e47d44ebe90b8594583c88, type: 3}
+  - {fileID: 8300000, guid: 63649d3f95e75644b94d88a770f1efc5, type: 3}
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
