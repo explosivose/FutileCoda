@@ -1,0 +1,143 @@
+fileFormatVersion: 2
+guid: 72555b8822136a14bbc1607b8eccc8f5
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Cylinder
+    100004: Cylinder_001
+    100006: floor
+    100008: longwall
+    100010: shortwall
+    100012: side_pillar
+    100014: top_pillar
+    100016: top_wall
+    100018: wall_bot_left
+    100020: wall_bot_right
+    100022: wall_side
+    100024: wall_top_left
+    100026: wall_top_right
+    400000: //RootNode
+    400002: Cylinder
+    400004: Cylinder_001
+    400006: floor
+    400008: longwall
+    400010: shortwall
+    400012: side_pillar
+    400014: top_pillar
+    400016: top_wall
+    400018: wall_bot_left
+    400020: wall_bot_right
+    400022: wall_side
+    400024: wall_top_left
+    400026: wall_top_right
+    2300000: //RootNode
+    2300002: Cylinder
+    2300004: Cylinder_001
+    2300006: floor
+    2300008: longwall
+    2300010: shortwall
+    2300012: side_pillar
+    2300014: top_pillar
+    2300016: top_wall
+    2300018: wall_bot_left
+    2300020: wall_bot_right
+    2300022: wall_side
+    2300024: wall_top_left
+    2300026: wall_top_right
+    3300000: //RootNode
+    3300002: Cylinder
+    3300004: Cylinder_001
+    3300006: floor
+    3300008: longwall
+    3300010: shortwall
+    3300012: side_pillar
+    3300014: top_pillar
+    3300016: top_wall
+    3300018: wall_bot_left
+    3300020: wall_bot_right
+    3300022: wall_side
+    3300024: wall_top_left
+    3300026: wall_top_right
+    4300000: Cube
+    4300002: wall_bot_right
+    4300004: wall_top_left
+    4300006: wall_bot_left
+    4300008: wall_top_right
+    4300010: wall_side
+    4300012: top_wall
+    4300014: floor
+    4300016: Cylinder_001
+    4300018: Cylinder
+    4300020: side_pillar
+    4300022: shortwall
+    4300024: longwall
+    4300026: top_pillar
+    6400000: Cylinder
+    6400002: Cylinder_001
+    6400004: floor
+    6400006: longwall
+    6400008: shortwall
+    6400010: side_pillar
+    6400012: top_pillar
+    6400014: top_wall
+    6400016: wall_bot_left
+    6400018: wall_bot_right
+    6400020: wall_side
+    6400022: wall_top_left
+    6400024: wall_top_right
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
