@@ -15,6 +15,7 @@ public class Dog : MonoBehaviour
 	private bool isAttacking = false;
 	private Transform player;
 	private Animator anim;
+	private Projectile.Source lastShotBy;
 
 	// Use this for initialization
 	void Awake () 
@@ -43,6 +44,8 @@ public class Dog : MonoBehaviour
 			if ( col.relativeVelocity.magnitude > 10f )
 			{
 				hitPoints-= 9;
+				if (hitPoints < 0)
+					lastShotBy = col.gameObject.GetComponent<BasicBullet>().ProjectileSource;
 				if (!isHurt) StartCoroutine(HurtEffect());
 			}
 		}
@@ -66,6 +69,7 @@ public class Dog : MonoBehaviour
 	public void LaserDamage()
 	{
 		hitPoints--;
+		lastShotBy = Projectile.Source.Player;
 		if (!isHurt) StartCoroutine(HurtEffect());
 	}
 	
@@ -106,7 +110,10 @@ public class Dog : MonoBehaviour
 		isDead = true;
 		AudioSource.PlayClipAtPoint(deathSound, transform.position);
 		anim.Play("dog_death");
+		if (lastShotBy == Projectile.Source.Player)
+			player.GetComponent<Player>().AddKill();
 		yield return new WaitForSeconds(1f);
 		Destroy(this.gameObject);
+		
 	}
 }

@@ -57,6 +57,13 @@ public class GameManager : Singleton<GameManager>
 		EnemySpawner.Instance.StartSpawning();
 	}
 	
+	void Restart()
+	{
+		Application.LoadLevel(Application.loadedLevel);
+		AudioListener.volume = 1f;
+	}
+		
+	
 	public void Pause()
 	{
 		Screen.lockCursor = false;
@@ -123,7 +130,7 @@ public class GameManager : Singleton<GameManager>
 		
 		GUILayout.BeginHorizontal();
 		if (GUILayout.Button("Restart", menuSkin.button))
-			Application.LoadLevel(Application.loadedLevel);
+			Restart();
 		
 		if (GUILayout.Button ("Credits", menuSkin.button))
 			gui = GUIState.Credits;
@@ -143,7 +150,7 @@ public class GameManager : Singleton<GameManager>
 			UnPause();
 		
 		if (GUILayout.Button ("Restart", menuSkin.button))
-			Application.LoadLevel(Application.loadedLevel);
+			Restart();
 		
 		if (GUILayout.Button ("Exit", menuSkin.button))
 			Application.Quit();
