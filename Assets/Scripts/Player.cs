@@ -10,8 +10,8 @@ public class Player : MonoBehaviour
 		get { return isDead; }
 	}
 	
-	private Transform[] weaponInventory = new Transform[2];
-	private int selected = 0;
+	public Transform[] weaponInventory = new Transform[2];
+	public int selected = 0;
 	private int health;
 	private bool isDead = false;
 	private bool hurting = false;
