@@ -92,6 +92,14 @@ MonoBehaviour:
     Align: 4
     verticalOffset: 0
     horizontalOffset: 0
+  howToPlay:
+    DesignHeight: 50
+    HeightIs: 0
+    DesignWidth: 100
+    WidthIs: 0
+    Align: 4
+    verticalOffset: 0
+    horizontalOffset: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -41,6 +41,7 @@ public class GameManager : Singleton<GameManager>
 		DeathScreen,
 		Scores,
 		Options,
+		HowToPlay,
 		Credits
 	}
 	
@@ -118,9 +119,14 @@ public class GameManager : Singleton<GameManager>
 			GUILayout.EndHorizontal();
 		}
 		
+		GUILayout.Space (30);
+		
+		GUILayout.BeginHorizontal();
 		if (GUILayout.Button("Start Game", menuSkin.button))
 			StartGame();
-		
+		if (GUILayout.Button("How to play", menuSkin.button))
+			gui = GUIState.HowToPlay;
+		GUILayout.EndHorizontal();
 	}
 	
 	public GUIWindow deathScreen = new GUIWindow();
@@ -187,12 +193,25 @@ public class GameManager : Singleton<GameManager>
 		
 		GUILayout.Space (15);
 		
-		if (GUILayout.Button("Main Menu",menuSkin.button))
+		if (GUILayout.Button("Back",menuSkin.button))
 			gui = GUIState.DeathScreen;
 	}
 
-	
-	
+	public GUIWindow howToPlay = new GUIWindow();
+	void wHowToPlay(int windowID)
+	{
+		GUILayout.Space (100);
+		
+		GUILayout.Label ("FUTILE CODA", menuSkin.label);
+		GUILayout.Label("MOVE: WASD", menuSkin.label);
+		GUILayout.Label ("CHANGE WEAPON: Q (q)", menuSkin.label);
+		GUILayout.Label ("LEFT CLICK: FIRE", menuSkin.label);
+		
+		GUILayout.Space (15);
+		
+		if (GUILayout.Button("Weapon Select",menuSkin.button))
+			gui = GUIState.WeaponSelect;
+	}
 	
 	void OnGUI()
 	{
@@ -218,6 +237,9 @@ public class GameManager : Singleton<GameManager>
 			break;
 		case GUIState.Credits:
 			currentWindow = credits;
+			break;
+		case GUIState.HowToPlay:
+			currentWindow = howToPlay;
 			break;
 		default:
 			break;
@@ -245,6 +267,9 @@ public class GameManager : Singleton<GameManager>
 			break;
 		case GUIState.Options:
 			GUILayout.Window (1, windowSize, wCredits, "OPTIONS", menuSkin.window);
+			break;
+		case GUIState.HowToPlay:
+			GUILayout.Window (1, windowSize, wHowToPlay, "CONTROLS", menuSkin.window);
 			break;
 		case GUIState.NoWindows:
 			break;
