@@ -61,10 +61,16 @@ public class Dog : MonoBehaviour
 		if (!isDead)
 		{
 			hitPoints--;
-			anim.Play("dog_hit");
-			yield return new WaitForSeconds(0.334f);
-			anim.Play ("dog_walkcycle");
-			if (hitPoints < 0) StartCoroutine(Die ());
+			if (hitPoints < 0) 
+			{
+				StartCoroutine(Die ());
+			}
+			else
+			{
+				anim.Play("dog_hit");
+				yield return new WaitForSeconds(0.334f);
+				anim.Play ("dog_walkcycle");
+			}
 		}
 		yield return new WaitForFixedUpdate();
 	}
