@@ -1,14 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Weapons\Shotgun.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\Soldier.cs">
     <Files>
-      <File FileName="Assets\Scripts\Weapons\Shotgun.cs" Line="39" Column="17" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\Dog.cs">
-    <Files>
-      <File FileName="Assets\Scripts\Enemies\Dog.cs" Line="13" Column="24" />
->>>>>>> f6b1a2425735858e652d83498fb967f780e22330
+      <File FileName="Assets\Scripts\Enemies\Dog.cs" Line="18" Column="2" />
+      <File FileName="Assets\Scripts\Weapons\Shotgun.cs" Line="67" Column="4" />
+      <File FileName="Assets\Scripts\CharacterController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ScreenShake.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Weapons\Laser.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CharacterLook.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EnemySpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ScreenFade.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\Soldier.cs" Line="91" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
