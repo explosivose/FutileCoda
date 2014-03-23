@@ -54,6 +54,7 @@ public class GameManager : Singleton<GameManager>
 		playerScript.SetWeaponSelection(weaponList[wep1], weaponList[wep2]);
 		ScreenShake.Instance.SetCamera(Camera.main.transform);
 		UnPause();
+		EnemySpawner.Instance.StartSpawning();
 	}
 	
 	public void Pause()
