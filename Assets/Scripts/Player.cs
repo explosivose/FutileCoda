@@ -48,9 +48,12 @@ public class Player : MonoBehaviour
 	{
 		if (col.gameObject.tag == "Bullet")
 		{
-			if ( col.relativeVelocity.magnitude > 10f )
+			if (col.gameObject.GetComponent<BasicBullet>().ProjectileSource == Projectile.Source.Enemy )
 			{
-				Hurt (5);
+				if ( col.relativeVelocity.magnitude > 10f )
+				{
+					Hurt (5);
+				}
 			}
 		}
 	}

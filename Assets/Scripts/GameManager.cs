@@ -122,10 +122,10 @@ public class GameManager : Singleton<GameManager>
 		GUILayout.Space (30);
 		
 		GUILayout.BeginHorizontal();
-		if (GUILayout.Button("Start Game", menuSkin.button))
-			StartGame();
 		if (GUILayout.Button("How to play", menuSkin.button))
 			gui = GUIState.HowToPlay;
+		if (GUILayout.Button("Start Game", menuSkin.button))
+			StartGame();
 		GUILayout.EndHorizontal();
 	}
 	
