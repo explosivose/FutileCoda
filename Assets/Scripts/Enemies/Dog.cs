@@ -2,13 +2,14 @@
 using System.Collections;
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(CapsuleCollider))]
 public class Dog : MonoBehaviour 
 {
 	public float moveSpeed;
 	public int hitPoints = 10;
 	
 	private bool isDead = false;
+	private bool isHurt = false;
 	private Transform player;
 	private Animator anim;
 
@@ -37,7 +38,7 @@ public class Dog : MonoBehaviour
 		{
 			if ( col.relativeVelocity.magnitude > 10f )
 			{
-				StartCoroutine(Hurt());
+				if (!isHurt) StartCoroutine(Hurt());
 			}
 		}
 		if (col.gameObject.tag == "Player")
@@ -58,6 +59,7 @@ public class Dog : MonoBehaviour
 	
 	IEnumerator Hurt()
 	{
+		isHurt = true;
 		if (!isDead)
 		{
 			hitPoints--;
@@ -73,6 +75,7 @@ public class Dog : MonoBehaviour
 			}
 		}
 		yield return new WaitForFixedUpdate();
+		isHurt = false;
 	}
 		
 	
