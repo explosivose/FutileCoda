@@ -29,7 +29,7 @@ public class Dog : MonoBehaviour
 		target.y = transform.position.y;
 		Vector3 direction = target - transform.position;
 		transform.rotation = Quaternion.LookRotation(direction);
-		if (isDead) return;
+		if (isDead || isHurt) return;
 		rigidbody.AddForce(transform.forward * moveSpeed * Time.deltaTime, ForceMode.VelocityChange);
 	}
 	
@@ -40,7 +40,7 @@ public class Dog : MonoBehaviour
 		{
 			if ( col.relativeVelocity.magnitude > 10f )
 			{
-				hitPoints--;
+				hitPoints-= 9;
 				if (!isHurt) StartCoroutine(HurtEffect());
 			}
 		}

@@ -172,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canJump: 1
   jumpStrength: 10
-  moveSpeed: 30
+  moveSpeed: 60
   sensitivityX: 2
 --- !u!114 &11400002
 MonoBehaviour:
