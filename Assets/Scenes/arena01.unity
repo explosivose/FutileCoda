@@ -1810,8 +1810,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 400000, guid: 977ae9872f59c334c90e950fee1ccc1e, type: 2}
-  spawnTime: 1
+  - {fileID: 400000, guid: a49d8d9058e1d1a4eaaf70c554871b40, type: 2}
+  spawnTime: 1000
 --- !u!4 &1468847415
 Transform:
   m_ObjectHideFlags: 0
@@ -2283,6 +2283,14 @@ Prefab:
     - target: {fileID: 400000, guid: ec9f4ce7c115a2d469dc05658fcfbd96, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: ec9f4ce7c115a2d469dc05658fcfbd96, type: 2}
+      propertyPath: enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 400000, guid: a49d8d9058e1d1a4eaaf70c554871b40, type: 2}
+    - target: {fileID: 11400000, guid: ec9f4ce7c115a2d469dc05658fcfbd96, type: 2}
+      propertyPath: spawnTime
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec9f4ce7c115a2d469dc05658fcfbd96, type: 2}
