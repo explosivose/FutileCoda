@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0756556c16f3b794fac1344ff0057a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 1
+  debug: 0
   startSound: {fileID: 8300000, guid: 9e5f766f7a2bb8646bb2b4327facfe70, type: 3}
   maxCharge: 4
   chargeTime: 5

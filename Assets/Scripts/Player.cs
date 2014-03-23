@@ -16,7 +16,8 @@ public class Player : MonoBehaviour
 		if (weaponInventory[1] != null) Destroy(weaponInventory[1]);
 		weaponInventory[0] = Instantiate(primary, transform.position, transform.rotation) as Transform;
 		weaponInventory[1] = Instantiate(secondary, transform.position, transform.rotation) as Transform;
-		
+		weaponInventory[0].parent = transform;
+		weaponInventory[1].parent = transform;
 	}
 	
 	// Use this for initialization

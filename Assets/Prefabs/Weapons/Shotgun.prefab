@@ -38,7 +38,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6673707c0ca43d645adcac3dbfe5dd42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 1
+  debug: 0
   firingSound: {fileID: 8300000, guid: da58747e93697734c89c25e38ec5c035, type: 3}
   rateOfFire: .910000026
   bulletSpread: 8
