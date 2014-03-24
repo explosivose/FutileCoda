@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
 		if (isDead) return;
 		health-=10;
 		StartCoroutine(HurtEffect());
-		if ( health < 0 ) StartCoroutine(Die() );
+		if ( health <= 0 ) StartCoroutine(Die() );
 	}
 	
 	void Hurt(int dmg)
@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
 		if (isDead) return;
 		health-=dmg;
 		StartCoroutine(HurtEffect());
-		if (health < 0 ) StartCoroutine( Die () );
+		if (health <= 0 ) StartCoroutine( Die () );
 	}
 	
 	IEnumerator HurtEffect()
