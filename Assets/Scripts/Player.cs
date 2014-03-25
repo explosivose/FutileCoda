@@ -98,6 +98,8 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		healthText.text = health.ToString();
+		scoreText.text = killCount.ToString();
 		if (isDead) return;
 		if (Input.GetButton("Fire1") && !GameManager.Instance.GameIsPaused)
 		{
@@ -116,8 +118,7 @@ public class Player : MonoBehaviour
 				GunTexture.Instance.ChangeTexture(weaponInventory[selected]);
 			}
 		}
-		healthText.text = health.ToString();
-		scoreText.text = killCount.ToString();
+
 	}
 	
 	
@@ -125,6 +126,7 @@ public class Player : MonoBehaviour
 	IEnumerator Die()
 	{
 		isDead = true;
+		health = 0;
 		AudioListener.volume = 0f;
 		GetComponent<CharacterController>().enabled = false;
 		Camera.main.GetComponent<CharacterLook>().enabled = false;
