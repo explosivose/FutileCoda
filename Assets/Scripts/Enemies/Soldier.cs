@@ -121,6 +121,7 @@ public class Soldier : MonoBehaviour
 	IEnumerator Die()
 	{
 		isDead = true;
+		isAttacking = false;
 		AudioSource.PlayClipAtPoint(deathSound, transform.position);
 		anim.Play("soldier_death");
 		if (lastShotBy == Projectile.Source.Player)
